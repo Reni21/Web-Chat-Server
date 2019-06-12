@@ -19,24 +19,6 @@ public class Utils {
         return URL + ":" + PORT;
     }
 
-    public static <T> int sendPostReq(String url, T object) throws IOException {
-        String json = toJSON(object);
-        java.net.URL objUrl = new URL(url);
-        HttpURLConnection conn = (HttpURLConnection) objUrl.openConnection();
-
-        conn.setRequestMethod("POST");
-        conn.setDoOutput(true);
-
-        OutputStream os = conn.getOutputStream();
-        try {
-            os.write(json.getBytes(StandardCharsets.UTF_8));
-            os.flush();
-            return conn.getResponseCode();
-        } finally {
-            os.close();
-        }
-    }
-
     public static <T> String toJSON(T object) {
         Gson gson = new GsonBuilder().create();
         return gson.toJson(object);
