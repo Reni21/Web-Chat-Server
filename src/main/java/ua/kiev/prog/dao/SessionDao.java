@@ -4,7 +4,7 @@ import java.util.*;
 
 public class SessionDao {
     private static final SessionDao SESSION_DAO = new SessionDao();
-    private Map<String, String> sessionIds = new HashMap<>();
+    private final Map<String, String> sessionIds = new HashMap<>();
 
     private SessionDao() {
     }
