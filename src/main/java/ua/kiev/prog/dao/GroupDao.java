@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class GroupDao {
     private static final GroupDao GROUP_DAO = new GroupDao();
-    private static final Group commonGroup = new Group("Common");
+    private final Group commonGroup = new Group("Common");
     private final Map<String, Group> privateGroups = new HashMap<>();
 
     private GroupDao() {
