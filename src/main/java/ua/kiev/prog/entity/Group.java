@@ -4,6 +4,7 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @EqualsAndHashCode
@@ -27,11 +28,11 @@ public class Group {
     }
 
     public List<User> getCroupMembers() {
-        return new ArrayList<>(members);
+        return Collections.unmodifiableList(members);
     }
 
     public List<Message> getGroupMsg() {
-        return new ArrayList<>(croupMsg);
+        return Collections.unmodifiableList(croupMsg);
     }
 
     public List<Message> getGroupMsg(int fromIndex) {
